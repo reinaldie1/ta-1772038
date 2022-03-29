@@ -58,10 +58,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/laporanTas" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Laporan
+                Laporan Tas
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/laporanBahan" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Laporan Bahan Baku
               </p>
             </a>
           </li>

@@ -12,6 +12,8 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\LaporanTasController;
+use App\Http\Controllers\LaporanBahanBakuController;
 use App\Middleware\CheckLoginMiddleware;
 use App\Http\Controllers;
 /*
@@ -27,6 +29,7 @@ use App\Http\Controllers;
 
 // Route::group(['middleware'=>'CheckLoginMiddleware'],function(){
     // Route::get('/', [AdminController::class, 'index']);
+
     //====================ADMIN==========================
 
     //Profile Admin
@@ -50,6 +53,13 @@ use App\Http\Controllers;
 
     //Kelola Kostumer
     Route::get('/admin/dashboard/kelolaKostumer',[KostumerController::class, 'index']);
+
+    //Laporan====
+    //Laporan Tas
+    Route::get('/laporanTas',[LaporanTasController::class, 'index']);
+
+    //Laporan Bahan Baku
+    Route::get('/laporanBahan',[LaporanBahanBakuController::class, 'index']);
 
     //====================KOSTUMER==========================
     //Main Page
