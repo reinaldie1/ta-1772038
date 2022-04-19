@@ -20,6 +20,9 @@
                                     <th>Harga Tas Rajut</th>
                                     <th>Status Tas</th>
                                     <th>Nama Pembeli</th>
+                                    <th>Provinsi</th>
+                                    <th>Kota</th>
+                                    <th>Detail Alamat</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -29,6 +32,9 @@
                                     <td>{{ $item -> harga_tas }}</td>
                                     <td>{{ $item -> status_tas }}</td>
                                     <td>{{ $item -> nama_kostumer }}</td>
+                                    <td>{{ $item -> provinsi_kostumer}}</td>
+                                    <td>{{ $item -> kota_kostumer}}</td>
+                                    <td>{{ $item -> alamat_lengkap}}</td>
                                 </tr>
                                 @endforeach
                                 </tbody>

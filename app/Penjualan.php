@@ -9,6 +9,6 @@ class Penjualan extends Model
 {
     protected $table = 'penjualan';
     protected $primaryKey = 'id_penjualan';
-    protected $fillable = ['id_penjualan','nama_tas','harga_tas','status_tas','nama_kostumer'];
+    protected $fillable = ['id_penjualan','nama_tas','harga_tas','status_tas','nama_kostumer','provinsi_kostumer','kota_kostumer','alamat_lengkap'];
     public $timestamps = false;
 }

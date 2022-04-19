@@ -1,3 +1,6 @@
+<?php 
+		$id_user = Session::get('id_user');
+		?>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <header id="header"><!--header-->
 		<div class="header-middle"><!--header-middle-->
@@ -22,7 +25,7 @@
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="/main" >Home</a></li>
 								<li><a href="/store">Store</a></li>
-								<li><a href="/chart">Cart</a></li>
+								<li><a href="/cart/{{$id_user}}">Cart</a></li>
 								
 								<!-- <li><a href="/contact">Contact Us</a></li> -->
 							</ul>

@@ -1,3 +1,8 @@
+    <?php 
+		$id_user = Session::get('id_user');
+		
+		?>
+
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -40,7 +45,7 @@
             <i class=""></i> {{session('username')}}
           </i>
           <div class="dropdown-divider"></div>
-          <a href="/admin/profile/{{session('id_user')}}" class="dropdown-item">
+          <a href="/admin/profile/{{$id_user}}" class="dropdown-item">
             <i class="fas fa-user-cog"></i> Profile
           </a>
           <div class="dropdown-divider"></div>

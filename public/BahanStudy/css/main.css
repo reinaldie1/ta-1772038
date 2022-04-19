@@ -1547,7 +1547,7 @@ h2.title {
 }
 
 #cart_items .cart_info .cart_menu {
-    background: #f305df;
+    background: #616161;
     color: #fff;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
@@ -1572,6 +1572,10 @@ h2.title {
     margin-right: 5px;
 }
 
+.cart_item1{
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px;
+}
 #cart_items .cart_info .image {
     padding-left: 30px;
 }

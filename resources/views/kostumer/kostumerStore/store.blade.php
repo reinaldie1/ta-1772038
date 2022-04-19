@@ -4,9 +4,9 @@
 @section('content')
 <!-- Slider -->
 		<?php 
-		$id = Session::get('id_user');
+		$id_user = Session::get('id_user');
 		?>
-<section id="slider">
+<!-- <section id="slider">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -66,7 +66,7 @@
 				</div>
 			</div>
 		</div>
-	</section><!--/slider-->
+	</section>/slider -->
 	<!-- Close Slider -->
 
     <!-- Featured Item -->
@@ -78,8 +78,11 @@
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">Store</h2>
 						@foreach($tasRajut as $item)
+						<form action="/cart/{{$id_user}}/{{$item -> id_tas}}" method="post" enctype="multipart/form-data">
+						@method('post')
+                        {{ csrf_field() }}
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -87,15 +90,11 @@
 										<img src="/assets/tasRajut/{{$item->gambar_tas}}" style = "height:100px;width:100px;" alt="" />
 										<h2>@currency($item->harga_tas)</h2>
 										<p>{{$item->nama_tas}}</p>
-											<button data-toggle="modal" data-target="#myModal"  data-id="{{ $item->id_tas }}" class="btn btn-default add-to-cart jumlah"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+										<button type="submit"  data-id="{{ $item->id_tas }}" class="btn btn-default add-to-cart jumlah"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+										<div class="modal fade" id="myModal" role="dialog">
+										</form>
+    							</div>
 									</div>
-									<!-- <div class="product-overlay">
-										<div class="overlay-content">
-											<h2>@currency($item->harga_tas)</h2>
-											<p>{{$item->nama_tas}}</p>
-												<button data-toggle="modal" data-target="#myModal"  data-id="{{ $item->id_tas }}" class="btn btn-default add-to-cart jumlah"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-										</div>
-									</div> -->
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
@@ -106,12 +105,10 @@
 						</div>
 						@endforeach
 					</div><!--features_items-->
-					
-					
-					
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Close Featured Item -->
+    
 @endsection

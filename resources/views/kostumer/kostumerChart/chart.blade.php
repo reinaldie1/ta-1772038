@@ -1,7 +1,10 @@
 @extends('kostumer/kostumer')
 
 @section('content')
-
+		<?php 
+		$id_user = Session::get('id_user');
+		
+		?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,24 +34,64 @@
 <body>
 	<section id="cart_items">
 		<div class="container">
+        <div class="review-payment">
+				<h2>Cart</h2>
+			</div>
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
+							<th class="description">Nama Tas</th>
+							<th class="image">Gambar Tas</th>
+							<th class="price">Harga Tas</th>
 							<td></td>
 						</tr>
 					</thead>
 					<tbody>
+						@foreach($getCart as $item)
+					
 						<tr>
-							<td></td>
-							<td></td>
+							<td class="cart_description">
+                                <h4><a href="">{{$item -> nama_tas}}</a></h4>
+                            </td>
+							<td class="cart_product">
+                                <a href="{{asset('assets/tasRajut')}}/{{$item->gambar_tas}}" target="_blank"><img src="{{asset('assets/tasRajut')}}/{{$item->gambar_tas}}" style="height:100px;width:100px;" ></a>
+                            </td>
+							<td class="cart_price"><p>@currency($item->harga_tas)</p></td>
+							<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCart{{$item->id_cart}}">Hapus</td>
+							<!-- MODAL DELETE CART -->
+							<div class="modal fade" id="deleteCart{{$item -> id_cart}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Hapus Dari Keranjang</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/cart/delete/{{$item->id_cart}}" method="POST" enctype="multipart/form-data">
+									@method('post')
+                        			{{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger">Anda yakin hapus barang dari keranjang ?</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
 						</tr>
+						<?php
+						?>
+						@endforeach
+                       
 					</tbody>
 				</table>
+                @if($getCart!==[])
+                <button class="btn btn-default " style="float:right;"><i class="fa fa-shopping-cart"><a href="/checkout/{{$id_user}}"></i>CHECKOUT</button>
+                @elseif($getCart==[])
+                <h2>Masukkan barang ke cart</h2>
+                @endif
 			</div>
 		</div>
 	</section> <!--/#cart_items-->

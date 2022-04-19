@@ -14,6 +14,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\LaporanTasController;
 use App\Http\Controllers\LaporanBahanBakuController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ConfirmController;
 use App\Middleware\CheckLoginMiddleware;
 use App\Http\Controllers;
 /*
@@ -66,10 +68,19 @@ use App\Http\Controllers;
     Route::get('/main',[MainPageController::class,'kostumerMain']);
 
     //Chart
-    Route::get('/chart',[ChartController::class,'index']);
+    Route::get('/cart/{id_user}',[ChartController::class,'index']);
+    // Route::get('/cart/{id_user}',[ChartController::class,'cartUser']);
+    Route::post('/cart/delete/{id_cart}' ,[ChartController::class,'destroy']);
 
     //Store
     Route::get('/store',[StoreController::class,'index']);
+    Route::post('/cart/{id_user}/{id_tas}',[StoreController::class,'cart']);
+
+    //Checkout
+    Route::get('/checkout/{id_user}',[CheckoutController::class,'index']);
+    Route::get('/confirm/{id_user}',[CheckoutController::class,'confirm']);
+    Route::post('/confirm/invoice/{id_user}',[CheckoutController::class,'invoice']);
+    // Route::get('/pdf',[CheckoutController::class,'pdf']);
 // });
 Route::get('/', [MainPageController::class,'index']);
 Route::get('/login',[AuthController::class,'index']);
