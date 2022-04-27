@@ -139,7 +139,7 @@ hr {
             Invoice
             <small class="page-info">
                 <i class="fa fa-angle-double-right text-80"></i>
-                ID: {{$getPenjualan -> order_id}}
+                ID: {{$getOneDataInvoice -> order_id}}
             </small>
         </h1>
 
@@ -191,20 +191,11 @@ hr {
                                 Invoice
                             </div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">ID:</span>{{$getPenjualan -> order_id}}</div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">ID:</span>{{$getOneDataInvoice -> order_id}}</div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Issue Date:</span> <span id="date01" style="padding-left:10px;"></span><script>
-                                n =  new Date();
-                                y = n.getFullYear();
-                                m = n.getMonth() + 1;
-                                d = n.getDate();
-                                hours = n.getHours();
-                                mnt = n.getMinutes();
-                                sec = n.getSeconds();
-                                document.getElementById("date01").innerHTML = d + "/" + m + "/" + y + " " + hours + ":" + mnt + ":" + sec;
-                            </script></div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Issue Date:</span> <span id="date01" style="padding-left:10px;"></span>{{$getOneDataInvoice -> created_at}}</div>
 
-                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-pill px-25">Paymen Succeed</span></div>
+                            <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-pill px-25">Payment Succeed</span></div>
                         </div>
                     </div>
                     <!-- /.col -->
@@ -225,7 +216,7 @@ hr {
                             <th width="140">Harga Tas</th>
                         </tr>
                     </thead>
-                    @foreach($getCart as $item)
+                    @foreach($getOneInvoice as $item)
                     <tbody class="text-95 text-secondary-d3">
                         <tr></tr>
                         <tr>

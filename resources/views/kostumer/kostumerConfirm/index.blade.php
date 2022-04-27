@@ -41,10 +41,10 @@
 							@method('post')
                             {{ csrf_field() }}
 							<input type="text" name="nama_kostumer"placeholder="Nama" value="{{$getKostumer->nama_kostumer}}" readonly/>
-							<input type="text" name="no_tlp" id="no_tlp" placeholder="No Telepon" value="{{$getKostumer->no_tlp}}" />
-							<input type="text" name="provinsi" id="provinsi"placeholder="Provinsi" value="{{$getKostumer->provinsi}}">
-							<input type="text" name="kota" id="kota" placeholder="Kota" value="{{$getKostumer->kota}}">
-							<input type="text" name="alamat_lengkap" id="alamat_lengkap" placeholder="Alamat Lengkap" value="{{$getKostumer->alamat_lengkap}}">
+							<input type="text" name="no_tlp" id="no_tlp" placeholder="No Telepon" value="{{$getKostumer->no_tlp}}" required/>
+							<input type="text" name="provinsi" id="provinsi"placeholder="Provinsi" value="{{$getKostumer->provinsi}}" required>
+							<input type="text" name="kota" id="kota" placeholder="Kota" value="{{$getKostumer->kota}}" required>
+							<input type="text" name="alamat_lengkap" id="alamat_lengkap" placeholder="Alamat Lengkap" value="{{$getKostumer->alamat_lengkap}}" required>
 							<button type="submit" class="btn btn-default">Confirm</button>
 						</form>
 					</div><!--/login form-->

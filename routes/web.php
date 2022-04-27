@@ -36,6 +36,8 @@ use App\Http\Controllers;
 
     //Profile Admin
     Route::get('/admin/profile/{id_user}',[ProfileController::class,'index']);
+    //search
+    Route::post('/search',[BahanBakuController::class,'findSearch']);
 
     //Kelola Tas Rajut
     Route::get('/admin/dashboard/kelolaTasRajut',[TasRajutController::class, 'index']);
@@ -81,6 +83,17 @@ use App\Http\Controllers;
     Route::get('/confirm/{id_user}',[CheckoutController::class,'confirm']);
     Route::post('/confirm/invoice/{id_user}',[CheckoutController::class,'invoice']);
     // Route::get('/pdf',[CheckoutController::class,'pdf']);
+
+    //profile kostumer
+    Route::get('/profile/{id_user}',[ProfileController::class,'indexKostumer']);
+    Route::get('/invoice/{id_user}',[ProfileController::class,'invoiceKostumer']);
+    Route::get('/all/invoice/{id_user}',[ProfileController::class,'allInvoice']);
+    Route::get('/invoice/print/{id_user}/{order_id}',[ProfileController::class,'invoice']);
+
+    //sign up konsumen
+    Route::get('/signup',[AuthController::class,'formSignUp']);
+    Route::post('/signUp/confirm',[AuthController::class,'signUp']);
+    Route::post('/signUp/confirm/{id_user}',[AuthController::class,'signUpConfirm']);
 // });
 Route::get('/', [MainPageController::class,'index']);
 Route::get('/login',[AuthController::class,'index']);

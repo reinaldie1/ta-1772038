@@ -3,7 +3,7 @@
 		?>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <header id="header"><!--header-->
-		<div class="header-middle"><!--header-middle-->
+		<div class="header-middle" ><!--header-middle-->
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 clearfix">
@@ -30,12 +30,17 @@
 								<!-- <li><a href="/contact">Contact Us</a></li> -->
 							</ul>
 						</div>
+						@if($id_user===null)
+						<div class="mainmenu pull-right">
+							<a href="/signup" class="btn btn-info">Sign Up</a>
+						</div>
+						@else
 						<div class="mainmenu pull-right">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<div class="dropdown">
   									<button class="btn btn-link dropdown-toggle " type="button" style="font-size:15px;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{session('username')}}</button>
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<a href="#" class="dropdown-item">
+										<a href="/profile/{{$id_user}}" class="dropdown-item">
             								<i class="fas fa-user-cog"></i> Profile
         								</a>
 										<div class="dropdown-divider"></div>
@@ -48,6 +53,9 @@
 								
 							</ul>
 						</div>
+
+						@endif
+						
 					</div>
 				</div>
 			</div>

@@ -16,6 +16,7 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
+                                    <th>Order ID</th>
                                     <th>Nama Tas Rajut</th>
                                     <th>Harga Tas Rajut</th>
                                     <th>Status Tas</th>
@@ -28,8 +29,9 @@
                                 <tbody>
                                 @foreach($penjualan as $item)
                                 <tr>
+                                    <td>{{ $item -> order_id}}</td>
                                     <td>{{ $item -> nama_tas }}</td>
-                                    <td>{{ $item -> harga_tas }}</td>
+                                    <td>@currency($item -> harga_tas)</td>
                                     <td>{{ $item -> status_tas }}</td>
                                     <td>{{ $item -> nama_kostumer }}</td>
                                     <td>{{ $item -> provinsi_kostumer}}</td>

@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Laporan Tas</h3>
+                        <h3 class="panel-title">Laporan Bahan Baku</h3>
                     </div>
                     <div class="panel-body">
                             <h3 class="panel-title"></h3>
@@ -20,6 +20,8 @@
                                     <th>Jumlah Bahan</th>
                                     <th>Dimasukkan pada tanggal</th>
                                     <th>Diupdate pada tanggal</th>
+                                    <th>Update Tambah Bahan Baku</th>
+                                    <th>Update Kurang Bahan Baku</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -27,8 +29,10 @@
                                 <tr>
                                     <td>{{ $item -> nama_bahanBaku }}</td>
                                     <td>{{ $item -> jumlah_bahanBaku }}</td>
-                                    <td>{{ $item -> created_at}}</td>
+                                    <td>{{ $item -> created_at }}</td>
                                     <td>{{ $item -> updated_at }}</td>
+                                    <td>{{ $item -> jumlah_penambahanBahan}}</td>
+                                    <td>{{ $item -> jumlah_penguranganBahan}}</td>
                                 </tr>
                                 @endforeach
                                 </tbody>

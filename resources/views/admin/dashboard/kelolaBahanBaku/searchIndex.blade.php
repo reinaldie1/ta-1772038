@@ -10,7 +10,7 @@
     <form class="form-inline" method="post" action="/search">
     @method('post')
     {{ csrf_field() }}
-    <input class="form-control form-control-navbar" type="text" name="search" placeholder="Search" aria-label="Search">
+    <input class="form-control form-control-navbar" type="search" name="Search" placeholder="Search" aria-label="Search">
     <button class="btn btn-info">Search now!</button>
     </form>
         <!-- MAIN CONTENT -->

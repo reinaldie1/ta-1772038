@@ -13,7 +13,7 @@
                         <h3 class="panel-title">Kelola Tas Rajut</h3>
                     </div>
                     <div class="panel-body">
-                        <a href="/tambahTasRajut" class="btn btn-info">Tambah Data</a>
+                        <a href="/tambahTasRajut" class="btn btn-info">Tambah Persediaan Tas Rajut</a>
                     </div>
                     <div class="panel-body">
                             <h3 class="panel-title"></h3>

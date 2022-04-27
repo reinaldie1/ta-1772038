@@ -87,11 +87,7 @@
                        
 					</tbody>
 				</table>
-                @if($getCart!==[])
                 <button class="btn btn-default " style="float:right;"><i class="fa fa-shopping-cart"><a href="/checkout/{{$id_user}}"></i>CHECKOUT</button>
-                @elseif($getCart==[])
-                <h2>Masukkan barang ke cart</h2>
-                @endif
 			</div>
 		</div>
 	</section> <!--/#cart_items-->
@@ -102,4 +98,10 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+            @if ($message = Session::get('fail'))
+                <div class="alert alert-danger alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong><span style=" overflow:auto;">{{ $message }}</span></strong>
+            </div>
+            @endif
 @endsection

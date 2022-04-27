@@ -46,9 +46,9 @@
 						<tr class="cart_menu">
 							<td class="image">Item</td>
 							<td class="description"></td>
+							<td></td>
+							<td></td>
 							<td class="price">Price</td>
-							<td></td>
-							<td></td>
 						</tr>
 					</thead>
 					<tbody>
@@ -60,11 +60,11 @@
 							<td class="cart_description">
 								<h4>{{ $item -> nama_tas}}</h4>
 							</td>
+							<td></td>
+							<td></td>
 							<td class="cart_price">
 								<p>@currency($item -> harga_tas)</p>
 							</td>
-							<td></td>
-							<td></td>
 						</tr>
 						@endforeach
 						<tr>
@@ -75,15 +75,15 @@
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Cart Total</td>
-										<td>{{ $getharga }}</td>
+										<td>@currency($getharga)</td>
 									</tr>
 									<tr class="shipping-cost">
 										<td>Shipping Cost (JNE)</td>
-										<td>{{ $shipping_cost }}</td>										
+										<td>@currency($shipping_cost)</td>										
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span>{{$getharga+$shipping_cost}}</span></td>
+										<td><span>@currency($getharga+$shipping_cost)</span></td>
 									</tr>
 									<tr>
 										<td><a href="/confirm/{{$id_user}}">CONFIRM</a></td>

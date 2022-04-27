@@ -11,7 +11,7 @@ class ChartController extends Controller
     public function index(Request $request){
         $getUser = (int)$request->id_user;
         $getCart = DB::table('temp_cart')->where('id_user',$getUser)->get();
-         return view('kostumer/kostumerChart/chart',['getCart'=> $getCart]);
+        return view('kostumer/kostumerChart/chart',['getCart'=> $getCart]);
     }
     public function destroy(Request $request){
         $getidCart = (int)$request->id_cart;

@@ -41,14 +41,15 @@
                             <input value="Sign In" name="btnSignIn"
                                    class="btn btn-success btn-lg btn-block"
                                    type="submit">
-                            @if (session('message'))
+                            @if ($message = Session::get('message'))
                                 <br><br>
                                 <div class="alert alert-danger alert-dismissible" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                    <i class="fa fa-times-circle"></i> {{session('message')}}
+                                    <i class="fa fa-times-circle"></i> {{$message}}
                                 </div>
                             @endif
-                        </form>
+                        </form><br>
+                        <a href="/store" class="btn btn-info">Login as Guest</a>
                     </div>
                 </div>
                 <div class="right">

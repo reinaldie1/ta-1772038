@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title" style="font-size:60px">Tambah Tas Rajut</h3>
+                        <h3 class="panel-title" style="font-size:60px">Persediaan Tas Rajut</h3>
                     </div>
                     <div class="panel">
                         <form action="" method="post"  enctype="multipart/form-data">
@@ -36,6 +36,12 @@
                                 @endif
                                 @if ($message = Session::get('success'))
                                 <div class="alert alert-success alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                                @endif
+                                @if ($message = Session::get('fail'))
+                                <div class="alert alert-danger alert-block">
                                     <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>{{ $message }}</strong>
                                 </div>
